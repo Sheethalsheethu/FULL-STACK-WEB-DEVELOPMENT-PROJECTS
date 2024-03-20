@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/fetchstyle.css">
+    <title>Add data to the database</title>
+    <style>
+        /* Add your CSS styles here */
+        .active {
+            color: blue; /* Change the color to indicate active link */
+            font-weight: bold; /* Make the text bold */
+        }
+    </style>
+    <script>
+        function setActiveLink(link) {
+            // Remove active class from all links
+            var links = document.querySelectorAll('a');
+            links.forEach(function(item) {
+                item.classList.remove('active');
+            });
+
+            // Add active class to the clicked link
+            link.classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="hero">
+        <img src="/images/background.png"  width="1700" height="900"  class="heroimg">
+        <div class="content">
+            <h1>Fetch Data From The Database</h1>
+
+            <div class="form-row">
+                <h3>User Data</h3>
+                <form action="/submit" method="POST" class="form-container">
+                    <label for="user_id" style="color: white;">Enter User ID:</label>
+                    <input type="text" id="user_id" name="user_id" required>
+                    <button type="submit">Fetch Data</button>
+                </form>
+                <% if (locals.user_name && locals.user_phone) { %>
+                    <h3>User Information:</h2>
+                    <p>User Name: <%= locals.user_name %></p>
+                    <p>User Phone: <%= locals.user_phone %></p>
+                <% } else if (locals.user_name === null && locals.user_phone === null) { %>
+                    <p>No user found</p>
+                <% } %>
+                </div>
+                <div class="form-row">
+                <h3>Agent Data</h3>
+                <form action="/agent" method="POST" class="form-container">
+                    <label for="agent_id" style="color: white;">Enter Agent ID:</label>
+                    <input type="text" id="agent_id" name="agent_id" required>
+                    <button type="submit" >Fetch Data</button>
+                </form>
+                <% if (locals.agent_name && locals.agent_phone && locals.user_id) { %>
+                    <h3>Agent Information:</h3>
+                    <p>Agent Name: <%= locals.agent_name %></p>
+                    <p>Agent Phone: <%= locals.agent_phone %></p>
+                    <p>User ID: <%= locals.user_id %></p>
+                <% } else if (locals.agent_name === null && locals.agent_phone === null  && locals.user_id === null ) { %>
+                    <p>No agent found</p>
+                <% } %>
+                </div>
+                <div class="form-row">
+                <h3>Booking Details</h3>
+                <form action="/booking" method="POST" class="form-container"> <!-- Corrected action attribute -->
+                    <label for="book_id" style="color: white;" > Enter Booking ID </label>
+                    <input type="text" id="book_id" name="book_id" required>
+                    <button type="submit">Fetch Data</button>
+                </form>
+                <% if (locals.book_type && locals.user_id && locals.book_date && locals.book_cost) { %>
+                    <h3>Booking Information:</h3>
+                    <p>Booking Type: <%= locals.book_type %></p>
+                    <p>User ID: <%= locals.user_id %></p>
+                    <p>Booking Date: <%= locals.book_date %></p>
+                    <p>Booking Cost: <%= locals.book_cost %></p>
+                <% } else if (locals.book_type === null && locals.user_id === null  && locals.book_date === null && locals.book_cost === null ) { %>
+                    <p>No booking found</p>
+                <% } %>
+                </div>
+                <div class="form-row">
+                <h3>Hotel Details</h3>
+                <form action="/hotel" method="POST" class="form-container">
+                    <label for="hotel_id" style="color: white;">Enter Hotel ID:</label>
+                    <input type="text" id="hotel_id" name="hotel_id" required>
+                    <button type="submit">Fetch Data</button>
+                </form>
+                <% if (locals.hotel_name && locals.hotel_desc && locals.hotel_type ) { %>
+                    <h3>Hotel Information:</h3>
+                    <p>Hotel Name: <%= locals.hotel_name %></p>
+                    <p>Hotel Description: <%= locals.hotel_desc %></p>
+                    <p>Hotel Type: <%= locals.hotel_type %></p>
+                <% } else if (locals.hotel_name === null && locals.hotel_desc === null  && locals.hotel_type === null  ) { %>
+                    <p>No Holets found</p>
+                <% } %>           
+                </div>
+                <div class="form-row">
+                <h3>Package Data</h3>
+                <form action="/packages" method="POST" class="form-container">
+                    <label for="pack_id" style="color: white;">Enter Package ID:</label>
+                    <input type="text" id="pack_id" name="pack_id" required>
+                    <button type="submit">Fetch Data</button>
+                </form>
+                <% if (locals.pack_desc && locals.pack_cost && locals.book_id && locals.hotel_id) { %>
+                    <h3>Package Information:</h3>
+                    <p>Package Description: <%= locals.pack_desc %></p>
+                    <p>Package cost: <%= locals.pack_cost %></p>
+                    <p>Book ID: <%= locals.book_id %></p>
+                    <p>Hotel ID : <%= locals.hotel_id %></p>
+                <% } else if (locals.pack_desc === null && locals.pack_cost === null  && locals.book_id === null && locals.hotel_id === null  ) { %>
+                    <p>No Holets found</p>
+                <% } %>             
+                </div>
+        </div>
+    </div>
+    <marquee behavior="scroll" bgcolor="black" height="30px"  direction="right">CAN FETCH THE DATA FROM THE DATABASE </marquee>
+    <section id="feature">
+        <div class="title-text">
+            <br>
+            <h2>For Any Help Contact</h2><br>
+            Tel: +91 78-8754 9000<br>
+            email:tourism12@gmail.com<br>
+            <br>
+            <h2>Follow Us On </h2>
+            <br>
+            <a href="https://www.instagram.com/" onclick="setActiveLink(this)"><img src="/images/img1.png" width="20" height="20" align="center"></a>
+            <a href="https://www.facebook.com/" onclick="setActiveLink(this)"><img src="/images/img2.png" width="20" height="20" align="center" alt="Facebook"></a>
+            <a href="https://www.twitter.com/" onclick="setActiveLink(this)"></a> <img src="/images/img3.png"  width="20" height="20" align="center"></a>
+            <a href="https://twitter.com/" onclick="setActiveLink(this)"><img src="/images/img4.png"  width="20" height="20" align="center"></a>
+        </div>
+    </section>
+</body>
+</html>

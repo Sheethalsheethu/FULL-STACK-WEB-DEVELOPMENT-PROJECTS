@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Tourism Database Management</title>
+    <style>
+        /* Add your CSS styles here */
+        .active {
+            color: blue; /* Change the color to indicate active link */
+            font-weight: bold; /* Make the text bold */
+        }
+    </style>
+    <script>
+        function setActiveLink(link) {
+            // Remove active class from all links
+            var links = document.querySelectorAll('a');
+            links.forEach(function(item) {
+                item.classList.remove('active');
+            });
+
+            // Add active class to the clicked link
+            link.classList.add('active');
+        }
+    </script>
+    <script>
+        function toggleInsertionInfo() {
+            var insertionInfo = document.getElementById("insertionInfo");
+            if (insertionInfo.style.display === "none") {
+                insertionInfo.style.display = "block";
+            } else {
+                insertionInfo.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="hero">
+        <img src="/images/BACKIMG.png" width="1700" height="900" class="heroimg">
+        <div class="title">
+            <h1>BOOK A TOUR !!!</h1>
+            <ul>
+            <li><form action="/fetch" method="GET" class="form-container">
+                <button type="submit" name="fetchButton">Fetch Details</button>
+            </form></li>
+    
+            <li><form action="/add" method="GET" class="form-container">
+                <button type="submit" name="addButton">Add Details</button>
+            </form></li>
+        </ul>
+        </div>
+    </div>
+    
+    <marquee behavior="scroll" bgcolor="black" height="30px"  direction="right">TOURISM DATABASE MANAGEMENT SYSTEM PROJECT BY SHAMITHA, NAGASHREE, SHEETHAL.</marquee>
+    <section id="feature">
+        <div class="title-text">
+            <br>
+            <h2>For Any Help Contact</h2><br>
+            Tel: +91 78-8754 9000<br>
+            email:tourism12@gmail.com<br>
+            <br>
+            <h2>Follow Us On </h2>
+            <br>
+            <a href="https://www.instagram.com/" onclick="setActiveLink(this)"><img src="/images/img1.png" width="20" height="20" align="center"></a>
+            <a href="https://www.facebook.com/" onclick="setActiveLink(this)"><img src="/images/img2.png" width="20" height="20" align="center" alt="Facebook"></a>
+            <a href="https://www.twitter.com/" onclick="setActiveLink(this)"></a> <img src="/images/img3.png"  width="20" height="20" align="center"></a>
+            <a href="https://twitter.com/" onclick="setActiveLink(this)"><img src="/images/img4.png"  width="20" height="20" align="center"></a>
+        </div>
+    </section>
+    <img src="/images/downimg.png" style="display: block; margin: 0 auto;">
+</body>
+</html>
+
+

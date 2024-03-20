@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/addstyle.css">
+    <title>Add data to the database</title>
+    <style>
+        /* Add your CSS styles here */
+        .active {
+            color: blue; /* Change the color to indicate active link */
+            font-weight: bold; /* Make the text bold */
+        }
+    </style>
+    <script>
+        let clickCount = 0; // Variable to store the click count
+
+        async function showPopup() {
+            try {
+                // Increment the click count
+                clickCount++;
+                var currentDate = new Date().toLocaleDateString();
+                alert("Number of people: " + clickCount + "\nDate: " + currentDate);
+            } catch (error) {
+                console.error('Error showing popup:', error);
+                alert('Error showing popup');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="hero">
+        <img src="/images/background.png"  width="1700" height="900"  class="heroimg">
+        <div class="content">
+            <h1>Add Data To The Database</h1>
+
+            <body>
+                <div class="style">
+                <h3>Add User Data</h3>
+                <form action="/add/user" method="POST" class="form-container">
+                    <div class="form-field">
+                        <label for="user_id" style="color: white;">User ID:</label>
+                        <input type="text" id="user_id" name="user_id" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="user_name" style="color: white;">User Name:</label>
+                        <input type="text" id="user_name" name="user_name" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="user_phone" style="color: white;">User Phone:</label>
+                        <input type="text" id="user_phone" name="user_phone" required>
+                    </div>
+                    <button type="submit" onclick="showPopup(event)">Add User</button>
+
+                </form>
+            </div>
+            </body>
+            <body>
+                <div class="style1">
+                <h3>Add Agent Data</h3>
+                <form action="/add/agent" method="POST" class="form-container">
+                    <div class="form-field">
+                        <label for="agent_id" style="color: white;">Agent ID:</label>
+                        <input type="text" id="agent_id" name="agent_id" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="agent_name" style="color: white;">Agent Name:</label>
+                        <input type="text" id="agent_name " name="agent_name" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="agent_phonee" style="color: white;">Agent Phone:</label>
+                        <input type="text" id="agent_phone" name="agent_phone" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="user_id" style="color: white;" >User ID:</label>
+                        <input type="text" id="user_id" name="user_id" required>
+                    </div>
+                    <button type="submit" onclick="showPopup()">Add Agent</button>
+                </form>
+            </div>
+            </body>
+            <body>
+                <div class="style2">
+                <h3>Add Package Data</h3>
+                <form action="/add/package" method="POST" class="form-container">
+                    <div class="form-field">
+                        <label for="pack_id" style="color: white;">Package ID:</label>
+                        <input type="text" id="pack_id" name="pack_id" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="pack_desc" style="color: white;" >Package Desc:</label>
+                        <input type="text" id="pack_desc" name="pack_desc" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="pack_cost" style="color: white;">Package Cost:</label>
+                        <input type="text" id="pack_cost" name="pack_cost" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="book_id" style="color: white;">Book ID:</label>
+                        <input type="text" id="book_id" name="book_id">
+                    </div>
+                    <div class="form-field">
+                        <label for="hotel_id" style="color: white;">Hotel ID:</label>
+                        <input type="text" id="hotel_id" name="hotel_id">
+                    </div>
+                    <button type="submit" onclick="showPopup()">Add Package</button>
+                </form>
+            </div>
+            </body>            
+            <body>
+                <div class="style3">
+                <h3>Add Hotel Data</h3>
+                <form action="/add/hotel" method="POST" class="form-container">
+                    <div class="form-field">
+                        <label for="hotel_id" style="color: white;">Hotel ID:</label>
+                        <input type="text" id="hotel_id" name="hotel_id" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="hotel_name" style="color: white;">Hotel Name:</label>
+                        <input type="text" id="hotel_name" name="hotel_name" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="hotel_desc" style="color: white;">Hotel Desc:</label>
+                        <input type="text" id="hotel_desc" name="hotel_desc" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="hotel_type" style="color: white;">Hotel Type:</label>
+                        <input type="text" id="hotel_type" name="hotel_type" required>
+                    </div>
+                    <button type="submit" onclick="showPopup()">Add Hotel</button>
+                </form>
+            </div>
+            </body>            
+            <body>
+                <div class="style4">
+                <h3>Add Booking Data</h3>
+                <form action="/add/booking" method="POST" class="form-container">
+                    <div class="form-field">
+                        <label for="book_id" style="color: white;">Booking ID:</label>
+                        <input type="text" id="book_id" name="book_id" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="book_type" style="color: white;">Book Type:</label>
+                        <input type="text" id="book_type" name="book_type" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="user_id" style="color: white;">User ID:</label>
+                        <input type="text" id="user_id" name="user_id" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="book_date" style="color: white;">Book Date:</label>
+                        <input type="text" id="book_date" name="book_date" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="book_cost" style="color: white;">Book Cost:</label>
+                        <input type="text" id="book_cost" name="book_cost" required>
+                    </div>
+                    <button type="submit" onclick="showPopup()">Add Booking</button>
+                </form>
+            </div>
+            </body>   
+
+        </div>
+    </div>
+    <marquee behavior="scroll" bgcolor="black" height="30px"  direction="right">CAN ADD THE DATA TO THE DATABASE </marquee>
+    <section id="feature">
+        <div class="title-text">
+            <br>
+            <h2>For Any Help Contact</h2><br>
+            Tel: +91 78-8754 9000<br>
+            email:tourism12@gmail.com<br>
+            <br>
+            <h2>Follow Us On </h2>
+            <br>
+            <a href="https://www.instagram.com/" onclick="setActiveLink(this)"><img src="/images/img1.png" width="20" height="20" align="center"></a>
+            <a href="https://www.facebook.com/" onclick="setActiveLink(this)"><img src="/images/img2.png" width="20" height="20" align="center" alt="Facebook"></a>
+            <a href="https://www.twitter.com/" onclick="setActiveLink(this)"></a> <img src="/images/img3.png"  width="20" height="20" align="center"></a>
+            <a href="https://twitter.com/" onclick="setActiveLink(this)"><img src="/images/img4.png"  width="20" height="20" align="center"></a>
+        </div>
+    </section>
+</body>
+</html>

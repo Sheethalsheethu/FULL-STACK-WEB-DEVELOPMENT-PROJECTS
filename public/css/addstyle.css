@@ -1,0 +1,156 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: century, sans-serif; /* Added sans-serif as fallback */
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ensure the hero section covers the entire viewport height */
+    background: linear-gradient(rgba(12,3,52,0.3), rgba(24, 8, 96, 0.3)), url(./images/background.png); 
+    display: flex;
+    justify-content: center;
+    background-size: cover; /* Ensure the background image covers the entire container */
+    background-position: center;
+    overflow: hidden; /* Hide any overflow */
+}
+
+.content {
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 40px;
+    color: rgb(250, 245, 248);
+    font-weight: 600;
+    transition: 0.5s;
+}
+.content h1:hover{
+    -webkit-text-stroke: 2px #161515;
+    color: transparent;
+}
+
+.heroimg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%; /* Ensure the image fills the entire container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .heroimg {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .heroimg {
+        width: auto;
+        height: 100%;
+    }
+}
+#feature{
+    width: 100%;
+    padding: 40px 0;
+  }
+  .title-text {
+    text-align: center; /* Center the text horizontally */
+    margin: 0 auto; /* Center the container horizontally */
+    max-width: 600px; /* Optionally, set a maximum width for better readability */
+  }
+
+  marquee {
+    color: rgb(245, 245, 249); /* Change the text color to blue */
+}
+
+
+.form-field {
+    margin-bottom: 10px; /* Add spacing between form fields */
+}
+
+.form-field label {
+    display: inline-block;
+    width: 150px; /* Set a fixed width for labels to create consistent alignment */
+}
+
+input {
+    width: 200px; /* Adjust input field width as needed */
+}
+
+.style{
+    align-items: center; /* Align items to the center */
+}
+
+.right {
+    align-items: flex-end; /* Align items to the right */
+}
+
+body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.style {
+    position:absolute;
+    top: 50;
+    left: 0;
+    margin: 20px; /* Optional: Add margin for spacing */
+}
+
+.style1 {
+    position: absolute;
+    top: 50;
+    right: 0;
+    margin: 20px; /* Optional: Add margin for spacing */
+}
+
+.style2 {
+    position: absolute;
+    top: 50;
+    margin: 20px; /* Optional: Add margin for spacing */
+}
+
+.style3 {
+    position: absolute;
+    top: 50%; /* Position the top of the element at 50% of the viewport height */
+    transform: translateY(-50%); /* Center the element vertically */
+    left: 0;
+    margin: 20px; /* Optional: Add margin for spacing */
+}
+
+.style4 {
+    position: absolute;
+    top: 60%; /* Position the top of the element at 60% of the viewport height */
+    transform: translateY(-50%); /* Center the element vertically */
+    left: 500px; /* Adjust the left position as needed */
+    margin: 20px; /* Optional: Add margin for spacing */
+}
+
+
+
+input {
+    display: inline-block;
+    width: 200px; /* Adjust as needed for input field width */
+    vertical-align: middle;
+}
+
+button {
+    width: 150px;
+    padding: 4px 0; /* Adjust the padding to reduce the size of the button box */
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #e8f1f1;
+    background: transparent;
+    color: #ededf1;
+    font-size: medium;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}

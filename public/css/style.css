@@ -1,0 +1,161 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: century, sans-serif; /* Added sans-serif as fallback */
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ensure the hero section covers the entire viewport height */
+    background: linear-gradient(rgba(12,3,52,0.3), rgba(24, 8, 96, 0.3)), url(./images/BACKIMG.png); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover; /* Ensure the background image covers the entire container */
+    background-position: center;
+    overflow: hidden; /* Hide any overflow */
+    opacity: 0.5;
+}
+
+.content {
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 60px;
+    color: rgb(250, 245, 248);
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.content h1:hover {
+    -webkit-text-stroke: 2px #161515;
+    color: transparent;
+}
+
+.title {
+    position: absolute;
+    bottom: 100;
+    top: 45%;
+    left: 55%;
+    transform: translate(-50%,-50%);
+}
+
+.title h1 {
+    color: #fff;
+    font-size: 55px;
+    font-family: 'Kablammo', cursive;
+}
+
+.title ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Use flexbox to align items */
+}
+
+.title ul li {
+    margin-right: 10px; /* Adjust spacing between list items */
+}
+
+.title ul li:last-child {
+    margin-right: 0; /* Remove margin for the last list item */
+}
+
+.title button {
+    width: 200px;
+    padding: 15px 0;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #f8fafb;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease; /* Move the transition here */
+}
+
+.title button:hover {
+    background: #fff; /* Change the background color on hover */
+    color: #000; /* Change text color on hover */
+}
+
+.title button:hover span {
+    width: 100%; /* Expand the hidden span on hover */
+}
+
+.heroimg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%; /* Ensure the image fills the entire container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .heroimg {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .heroimg {
+        width: auto;
+        height: 100%;
+    }
+}
+
+/* CSS for aligning labels and input fields */
+.form-container {
+    text-align: left;
+}
+
+.form-field {
+    margin-bottom: 10px;
+}
+
+label {
+    display: inline-block;
+    width: 150px; /* Adjust as needed for label width */
+}
+
+input {
+    display: inline-block;
+    width: 200px; /* Adjust as needed for input field width */
+    vertical-align: middle;
+}
+
+button {
+    display: inline-block; /* To place the button next to the input fields */
+    margin-top: 10px; /* Adjust as needed */
+}
+
+body {
+    position: relative;
+    min-height: 100vh; /* Ensure the body takes up the full height of the viewport */
+    margin: 0;
+}
+/* CSS for the feature section */
+#feature {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    text-align: center; /* Center the text horizontally */
+}
+
+.title-text {
+    max-width: 600px; /* Optionally, set a maximum width for better readability */
+}
+
+marquee {
+    color: rgb(245, 245, 249); /* Change the text color to blue */
+}
